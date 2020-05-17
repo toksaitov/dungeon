@@ -43,7 +43,11 @@ void drawLevel() {
           break;
         case 'E':
           image(floorImage, pixelX, pixelY, cellSize, cellSize);
-          image(doorImage, pixelX, pixelY, cellSize, cellSize);
+          pushMatrix();
+          translate(pixelX, pixelY);
+          scale(-1, 1);
+          image(doorImage, -cellSize, 0, cellSize, cellSize);
+          popMatrix();
           break;
         case '*':
           image(floorImage, pixelX, pixelY, cellSize, cellSize);
